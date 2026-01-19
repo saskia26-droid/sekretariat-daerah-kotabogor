@@ -1,287 +1,201 @@
-/* Kustomisasi Navigasi */
-.navbar-brand img, .logo-setda {
-    height: 40px; /* Sesuaikan ukuran logo */
+/* --- 1. PENGATURAN DASAR --- */
+:root {
+    --text-color: #0E2036;
+    --border-color: #267796;
+    --accent-color: #007bff;
 }
 
-/* Border menyatu untuk navigasi */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+}
+
+/* --- 2. NAVIGASI (NAVBAR) --- */
+.navbar-brand img, .logo-setda {
+    height: 40px;
+}
+
 .border-custom-nav {
-    border: 2px solid #267796;
+    border: 2px solid var(--border-color);
 }
 
 .nav-link {
-    color: #0E2036 !important;
+    color: var(--text-color) !important;
     padding: 8px 20px;
+    font-weight: bold;
 }
 
 .nav-link:hover {
-    color: #267796 !important;
+    color: var(--border-color) !important;
 }
 
 .dropdown-menu {
-    border: 2px solid #267796;
+    border: 2px solid var(--border-color);
     border-radius: 10px;
 }
 
 .dropdown-item {
-    color: #0E2036;
+    color: var(--text-color);
 }
 
 .dropdown-item:hover {
     background-color: #f0f0f0;
 }
-:root {
-    --text-color: #0E2036;
-    --border-color: #267796;
-}
 
-body {
-    background-color: #f8f9fa; /* Latar belakang abu-abu terang */
-    font-family: Arial, sans-serif;
-}
-
-/* Kustomisasi Navigasi */
-.navbar-brand img, .logo-setda {
-    height: 40px; /* Sesuaikan ukuran logo */
-}
-
-.nav-pills-custom .nav-link {
-    background-color: #fff;
-    color: var(--text-color);
-    border: 2px solid var(--border-color);
-    border-radius: 50px;
-    margin: 0 5px;
-    padding: 8px 25px;
-    font-weight: bold;
-}
-
-.nav-pills-custom .nav-link:hover {
-    background-color: var(--border-color);
-    color: #fff;
-}
-
-/* Kustomisasi Banner */
-/* Kustomisasi Banner */
+/* --- 3. BANNER / HERO SECTION --- */
 .banner-section {
     width: 100%;
-    /* Hapus properti 'height' agar tinggi menyesuaikan gambar */
     overflow: hidden;
 }
+
 .banner-section img {
     object-fit: cover;
-    width: 100%; /* Pastikan gambar mengisi lebar 100% */
-    height: auto; /* Biarkan tinggi menyesuaikan proporsi */
+    width: 100%;
+    height: auto;
 }
+
 .banner-overlay {
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
 }
-.logo-kota-bogor {
-    height: 100px; /* Sesuaikan ukuran logo */
-}
 
-/* Kustomisasi Bagian Konten (Sejarah) */
-.content-section {
+/* --- 4. KONTEN UMUM (SEJARAH, PERATURAN) --- */
+.content-section, .peraturan-box {
     background-color: #fff;
     padding: 3rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 2px solid var(--border-color);
 }
+
 .section-title {
     color: var(--text-color);
     font-weight: bold;
-    text-align: center;
     margin-bottom: 1rem;
 }
+
 .line-border {
     border-bottom: 2px solid var(--border-color);
     width: 150px;
     margin: 0 auto 2rem;
 }
 
-/* Kustomisasi Kartu Berita (Home 2) */
+/* --- 5. VISI & MISI --- */
+.visi-misi-box {
+    border: 4px solid var(--border-color);
+    border-radius: 10px;
+    padding-top: 40px !important;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.visi-misi-title-custom {
+    background-color: var(--border-color);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50px !important;
+    padding: 8px 30px !important;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* --- 6. KARTU & GALERI --- */
 .card-custom {
     border: 2px solid var(--border-color);
     border-radius: 15px;
     overflow: hidden;
     height: 100%;
 }
-.card-image-placeholder {
-    height: 150px;
-    background-color: #e9ecef; /* Warna abu-abu untuk placeholder */
-    border-bottom: 2px solid var(--border-color);
-}
-.card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
-}
-.arrow-link {
-    color: var(--border-color);
-    font-size: 1.5rem;
-}
-.arrow-link:hover {
-    color: var(--text-color);
-}
 
-/* Kustomisasi Footer */
-.footer-custom {
-    background-color: #0E2036;
-    color: #fff;
-}
-.logo-footer {
-    height: 50px; /* Sesuaikan ukuran logo */
-}
-.alamat-title, .alamat-text {
-    text-align: left;
-}
-.social-icon {
-    font-size: 1.5rem;
-}
-/* Styling Galeri */
 .card-img-custom {
-    border-bottom: 2px solid #267796;
+    border-bottom: 2px solid var(--border-color);
     height: 250px;
     object-fit: cover;
 }
 
-video {
-    width: 100%;
-    height: auto;
+/* --- 7. DAFTAR KARYAWAN & TABEL --- */
+.table-bordered, .table-bordered th, .table-bordered td {
+    border: 1px solid var(--border-color) !important;
 }
 
-.text-start {
-    text-align: left !important;
-}
-
-.card-custom {
-    border-radius: 15px;
-    overflow: hidden;
-    border: 2px solid #267796;
-}
-/* Styling Halaman Visi Misi */
-.visi-misi-box {
-    border: 2px solid #267796;
-}
-/* Styling Halaman Visi Misi */
-.visi-misi-title-custom {
-    background-color: #267796;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 50px !important;
-    padding: 8px 30px !important;
-    position: absolute;
-    top: -20px; /* Atur posisi vertikal */
-    left: 50%;
-    transform: translateX(-50%); /* Atur posisi horizontal di tengah */
-    z-index: 10;
-}
-
-.visi-misi-box {
-    border-width: 4px;
-    border-style: solid;
-    border-radius: 10px;
-    padding-top: 30px !important; /* Berikan ruang di atas untuk judul */
-}
-
-.border-custom-visi {
-    border-color: #267796;
-}
-
-.border-custom-misi {
-    border-color: #267796; /* Warna abu-abu untuk border misi */
-}
-.visi-misi-title {
-    background-color: #267796;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 5px !important;
-}
-
-/* Styling untuk menyamakan tinggi kotak Visi dan Misi */
-.equal-height {
-    min-height: 200px; /* Sesuaikan nilai ini sesuai kebutuhan */
-    display: flex;
-    align-items: center;
-}
-
-/* Styling Halaman Daftar Karyawan */
-.search-bar {
-    width: 300px;
-}
-
-.table-bordered {
-    border-color: #267796;
-}
-
-.table-bordered th, .table-bordered td {
-    border-color: #267796;
-    color: #0E2036;
-}
-/* Styling Halaman Berita Detail */
-.main-news-image-placeholder {
-    height: 350px;
-    background-color: #e9ecef;
-    border: 2px solid #267796;
-    border-radius: 10px;
-}
-/* Styling kotak peraturan agar mirip dengan sejarah */
-.peraturan-box {
-    width: 100%;
-    max-width: 800px;
-    background-color: #fff;
-    padding: 2rem;
-    border: 2px solid #267796;
-    border-radius: 10px;
-}
-.alamat-section {
-    text-align: right;
-}
-/* Styling untuk Footer */
-.footer-custom {
-    background-color: #0E2036;
-    color: #fff;
-}
-.logo-footer {
-    height: 50px; /* Sesuaikan ukuran logo */
-}
-.alamat-section {
-    text-align: right;
-}
-.alamat-title, .alamat-text {
-    color: #fff;
-    margin-bottom: 0;
-}
-.profile-icon {
-    font-size: 4rem;
-    color: #007bff; /* Warna biru untuk ikon */
-}
-
-.status-text {
-    color: #6c757d; /* Abu-abu untuk jabatan */
-    font-size: 0.95rem;
-}
-
-.badge.bg-primary {
-    background-color: #007bff !important;
-}
-
-.badge.bg-secondary {
-    background-color: #6c757d !important;
-}
 .btn-custom {
-    background-color: #007bff; /* Warna biru */
+    background-color: var(--accent-color);
     color: white;
-    border-color: #007bff;
+    border-color: var(--accent-color);
 }
 
 .btn-outline-custom {
     background-color: transparent;
-    color: #007bff;
-    border-color: #007bff;
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* --- 8. FOOTER --- */
+.footer-custom {
+    background-color: #0E2036;
+    color: #fff;
+    padding: 3rem 0;
+}
+
+.logo-footer {
+    height: 50px;
+}
+
+.alamat-section {
+    text-align: right;
+}
+
+/* --- 9. PERBAIKAN TAMPILAN HP (RESPONSIVE) --- */
+@media (max-width: 991.98px) {
+    /* Hilangkan bentuk kapsul dan border biru yang sempit di HP */
+    .border-custom-nav {
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    .rounded-pill {
+        border-radius: 0 !important;
+    }
+
+    /* Buat menu navigasi berjejer vertikal agar tidak tumpang tindih */
+    .navbar-nav {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee; /* Beri pemisah tipis antar menu */
+    }
+
+    /* Pastikan dropdown tidak menabrak banner */
+    .dropdown-menu {
+        position: static !important;
+        float: none;
+        width: 100%;
+        margin-top: 10px;
+        background-color: #fcfcfc;
+    }
+
+    .alamat-section {
+        text-align: center; /* Footer rata tengah di HP */
+        margin-top: 2rem;
+    }
 }
 
 .btn-outline-custom:hover {
     background-color: #007bff;
     color: white;
+
 }
