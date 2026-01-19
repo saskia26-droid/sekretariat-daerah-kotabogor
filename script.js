@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
                           document.addEventListener("DOMContentLoaded", function() {
     // --- 1. KONFIGURASI LINK GOOGLE SHEETS BERITA ---
     // Pastikan link di bawah ini adalah link "Publish to Web" dalam format CSV
-    const linkBeritaCSV = 'TEMPEL_LINK_CSV_BERITA_KAMU_DISINI';
+    const linkBeritaCSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRR1SoshWLAXMQ1wWVgsYQVr4Df8uj9CD1eXXF10gBOQaaKb2lplMqSTZTcVrbmK2nwc3SDTnQz_SpT/pub?output=csv';
 
     const containerBerita = document.getElementById('container-berita-otomatis');
 
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <div class="card-body">
                                     <h5 class="card-title fw-bold">${judul}</h5>
                                     <p class="text-muted small">Dipublikasi: ${tanggal}</p>
-                                    <p class="card-text">${ringkasan}</p>
+                                    <p class="card-text">${IsiSingkat}</p>
                                     <div class="text-end mt-auto">
                                         <a href="${linkTujuan}" class="btn btn-outline-custom">Baca Selengkapnya</a>
                                     </div>
@@ -162,6 +162,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 });
+
 
 
 
