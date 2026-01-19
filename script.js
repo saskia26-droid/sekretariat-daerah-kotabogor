@@ -106,13 +106,5 @@ document.addEventListener("DOMContentLoaded", function() {
     // Tampilkan data ASN secara default saat halaman dimuat
     populateTable(dataASN);
 
-    // Kode untuk navigasi dropdown (tetap sama)
-    const profileDropdown = document.getElementById('profileDropdown');
-    if(profileDropdown) {
-        profileDropdown.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.parentElement.classList.toggle('show');
-            this.nextElementSibling.classList.toggle('show');
-        });
-    }
+
 });
