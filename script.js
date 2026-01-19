@@ -108,7 +108,60 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Tampilkan data ASN secara default saat halaman dimuat
     populateTable(dataASN);
+}
+                          document.addEventListener("DOMContentLoaded", function() {
+    // --- 1. KONFIGURASI LINK GOOGLE SHEETS BERITA ---
+    // Pastikan link di bawah ini adalah link "Publish to Web" dalam format CSV
+    const linkBeritaCSV = 'TEMPEL_LINK_CSV_BERITA_KAMU_DISINI';
 
+    const containerBerita = document.getElementById('container-berita-otomatis');
 
+    if (containerBerita) {
+        fetch(linkBeritaCSV)
+            .then(res => res.text())
+            .then(csvText => {
+                // Memisahkan data per baris dan membuang baris judul (header)
+                const baris = csvText.split('\n').slice(1);
+                let htmlBerita = '';
+
+                baris.forEach(row => {
+                    // Gunakan k.split(';') jika di Sheets kamu pemisahnya titik koma
+                    const k = row.split(','); 
+                    
+                    // Pastikan baris memiliki data (minimal ada judul dan isi)
+                    if (k.length < 3) return;
+
+                    // Mapping Kolom: 0=Tanggal, 1=Judul, 2=Isi, 3=LinkGambar, 4=LinkSelengkapnya
+                    const tanggal = k[0]?.trim();
+                    const judul = k[1]?.trim();
+                    const ringkasan = k[2]?.trim();
+                    const linkGambar = k[3]?.trim() || 'https://via.placeholder.com/400x250';
+                    const linkTujuan = k[4]?.trim() || '#';
+
+                    htmlBerita += `
+                        <div class="col-md-6 mb-4">
+                            <div class="card card-custom h-100">
+                                <img src="${linkGambar}" class="card-img-top card-img-custom" alt="${judul}">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">${judul}</h5>
+                                    <p class="text-muted small">Dipublikasi: ${tanggal}</p>
+                                    <p class="card-text">${ringkasan}</p>
+                                    <div class="text-end mt-auto">
+                                        <a href="${linkTujuan}" class="btn btn-outline-custom">Baca Selengkapnya</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                });
+
+                containerBerita.innerHTML = htmlBerita;
+            })
+            .catch(err => {
+                containerBerita.innerHTML = '<p class="text-center text-danger">Gagal memuat berita terbaru.</p>';
+                console.error("Error fetching news:", err);
+            });
+    }
 });
+
+
 
