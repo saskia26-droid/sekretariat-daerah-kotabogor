@@ -156,46 +156,39 @@ body {
     text-align: right;
 }
 
-/* --- 9. PERBAIKAN TAMPILAN HP (RESPONSIVE) --- */
+/* Perbaikan khusus agar menu tetap sejajar (horizontal) di HP */
 @media (max-width: 991.98px) {
-    /* Hilangkan bentuk kapsul dan border biru yang sempit di HP */
-    .border-custom-nav {
-        border: none !important;
-        background: transparent !important;
-    }
-    
-    .rounded-pill {
-        border-radius: 0 !important;
-    }
-
-    /* Buat menu navigasi berjejer vertikal agar tidak tumpang tindih */
+    /* 1. Pastikan menu tetap berjejer ke samping */
     .navbar-nav {
-        flex-direction: column !important;
-        text-align: center;
+        flex-direction: row !important;
+        justify-content: center !important;
+        display: flex !important;
     }
 
+    /* 2. Kecilkan padding dan font agar muat dalam satu baris */
     .nav-link {
-        padding: 10px 0;
-        border-bottom: 1px solid #eee; /* Beri pemisah tipis antar menu */
+        padding: 8px 8px !important; /* Padding lebih kecil */
+        font-size: 13px !important;    /* Ukuran teks sedikit dikecilkan */
     }
 
-    /* Pastikan dropdown tidak menabrak banner */
+    /* 3. Atur logo agar tidak terlalu lebar di layar kecil */
+    .logo-setda {
+        height: 30px !important; 
+    }
+
+    /* 4. Perbaiki posisi dropdown agar tidak merusak kapsul biru */
     .dropdown-menu {
-        position: static !important;
-        float: none;
-        width: 100%;
-        margin-top: 10px;
-        background-color: #fcfcfc;
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* Biar muncul tepat di tengah tombol */
+        min-width: 160px;
+        z-index: 1000;
+        margin-top: 10px !important;
     }
 
-    .alamat-section {
-        text-align: center; /* Footer rata tengah di HP */
-        margin-top: 2rem;
+    /* 5. Atur container kapsul agar fleksibel */
+    .border-custom-nav {
+        padding: 2px 10px !important;
+        max-width: 90%; /* Supaya tidak mentok pinggir layar HP */
     }
-}
-
-.btn-outline-custom:hover {
-    background-color: #007bff;
-    color: white;
-
 }
